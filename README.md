@@ -1,4 +1,7 @@
-## Work in Progress
+## Welcome
+
+This is a WIP (Work-In-Progress) website for the at this moment one-man organisation to facilitate playing TTRPGs in Rhenen, be it IRL or online. 
+
 
 You can use the [editor on GitHub](https://github.com/rhenenrpg/rhenenrpg.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
