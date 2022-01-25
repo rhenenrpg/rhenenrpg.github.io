@@ -1,8 +1,11 @@
 ## Welcome
 
-This is a WIP (Work-In-Progress) website for the volunteer organization that aims to facilitate playing TTRPGs in Rhenen and the Lowlands, be it IRL or online. At this moment volunteer is singular as a matter of fact.
+This is a WIP (Work-In-Progress) website for the volunteer organization that aims to facilitate playing TTRPGs in Rhenen and the Lowlands, be it IRL or online. At this moment volunteer is in fact singular, but if you like to step in, contact me.
 
 Having been a Dungeon and Dragon fanatic since my university years in the last millenium, this site aims to give back to the great community that considers TTRPG their hobby.
+
+
+
 
 You can use the [editor on GitHub](https://github.com/rhenenrpg/rhenenrpg.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
