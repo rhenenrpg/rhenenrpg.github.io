@@ -1,8 +1,9 @@
 ## Welcome
 
-This is a WIP (Work-In-Progress) site for the volunteer organization that aims to facilitate playing TTRPGs in Rhenen and the Lowlands, mostly online - but maybe one day IRL. At this moment volunteer is in fact singular, but if you like to step in, contact me.
+This site is a Work-In-Progress.
 
-Having been an avid Dungeon and Dragon player and gamemaster since my university years in the last millenium, this site aims to give back to the great community that considers TTRPG their hobby. Do not expect professional writing nor frequent updates because i have a lot of time to spend, but not a lot to give.
+Having been an avid Dungeon and Dragon player and gamemaster since my university years in the last millenium, with this site i aims to share withthe great community that considers TTRPG their hobby. Focus will be knowledge and subjects that i do not find detailed elsewhere on the internet. Do not expect professional writing nor frequent updates because i have a lot of time to spend, but not a lot to give.
+
 
 [Multi-Gamemaster Multi-Player](/mgmp/README.md) 
 
