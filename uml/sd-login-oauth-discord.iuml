@@ -1,0 +1,44 @@
+@startuml
+actor       User       as user
+participant browser
+boundary    "rhenenrpg.net\nreverseproxy" as rp
+participant wiki
+participant Discord as discord
+user -> browser  : open rhenenrpg.net
+browser -> rp : open rhenenrpg.net
+rp -> wiki: get
+wiki --> rp: return startpage (not logged in)
+rp --> browser : return startpage
+user -> browser : login with Discord
+browser -> rp: login with Discord
+rp -> wiki: login with Discord
+wiki --> rp: redirect to Discord authorization
+rp --> browser: redirect to Discord authorization
+browser -> discord: start Discord authorization
+group Discord authorization 
+discord --> browser : Discord Login
+user -> browser: Login
+end 
+discord --> browser: redirect access token to rhenenrpg
+browser -> rp: send access token to rhenenrpg
+rp -> wiki: send access token to rhenenrpg
+wiki -> discord: /api/users/@me
+discord --> wiki: return user info
+wiki -> discord: /api/users/@me/guilds
+discord --> wiki: return user guilds info
+group only for configured guilds the user is member of
+wiki -> discord: /api/users/@me/guilds/<guildid>/member'
+discord --> wiki: return user member info
+end
+group if user not registered
+wiki -> wiki: register new user
+end
+wiki -> wiki: set groups for user
+wiki --> rp: redirect to startpage
+rp --> browser: redirect to startpage
+user -> browser: open startpage
+browser -> rp : open startpage
+rp -> wiki: get
+wiki --> rp: return startpage (logged in)
+rp --> browser : return startpage (logged in)
+@enduml
