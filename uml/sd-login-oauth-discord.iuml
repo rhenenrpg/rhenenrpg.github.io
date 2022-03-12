@@ -26,7 +26,7 @@ wiki -> discord: /api/users/@me
 discord --> wiki: return user info
 wiki -> discord: /api/users/@me/guilds
 discord --> wiki: return user guilds info
-group only for configured guilds the user is member of
+group for configured guilds the user is member of
 wiki -> discord: /api/users/@me/guilds/<guildid>/member'
 discord --> wiki: return user member info
 end
