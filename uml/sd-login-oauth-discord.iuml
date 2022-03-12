@@ -1,7 +1,7 @@
 @startuml
 actor       User       as user
 participant browser
-participant    "rhenenrpg.net\nreverseproxy" as rp
+participant "rhenenrpg.net\nreverseproxy" as rp
 participant wiki
 participant Discord as discord
 user -> browser  : open rhenenrpg.net
