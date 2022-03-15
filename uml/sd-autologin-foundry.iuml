@@ -1,0 +1,56 @@
+@startuml
+actor       User       as user
+participant browser
+participant "rhenenrpg.net\nreverseproxy" as rp
+participant wiki
+collections "foundry instance\n(multiple)" as foundry
+user -> browser: open foundrystatus page
+browser -> rp: get foundrystatus page
+rp -> wiki: get foundrystatus page
+group for each foundry instance configured on page
+alt if user has access to foundry instance
+wiki -> wiki: determine user role in foundry
+wiki -> foundry: announce-discord-user
+alt if user not registered in foundry
+foundry -> foundry: create user
+end
+alt if password not known or invalid
+foundry -> foundry: assign new password
+end
+alt if role in foundry is different
+foundry -> foundry: update role
+end
+foundry --> wiki: return world and user data
+end
+wiki -> wiki: show world and user data to page
+end
+wiki --> rp: return foundrystatus page
+rp --> browser : return foundrystatus page
+user -> browser: see foundrystatus page
+user -> browser: open 1 foundry world
+browser -> rp: check authorization for /world
+alt user not authorized authorization for /world
+rp --> browser: redirect to start page
+else
+rp -> foundry: /world/join
+foundry --> rp: return join page
+rp --> browser: return join page
+browser --> browser: start autologin flow
+browser -> rp: get foundrystatus page
+rp -> wiki: get foundrystatus page
+note over wiki, foundry
+  same as above
+end note
+wiki --> rp: get foundrystatus page
+browser -> rp: login user
+rp -> foundry: login user
+foundry --> rp: return success
+rp --> browser: return success
+browser -> browser: redirect to /world/game
+browser -> rp: get /world/game
+rp -> foundry: get /world/game
+foundry --> rp: start world
+rp --> browser: start world
+end
+user -> browser: Play!
+@enduml
