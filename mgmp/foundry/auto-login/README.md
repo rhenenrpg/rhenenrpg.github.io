@@ -1,11 +1,11 @@
 ## Foundry Autologin
 
-User management has not been a priority in the development of FoundryVTT. FoudryVTT user management has drawbacks, some IMHO unacceptable:
+User management has not been a priority in the development of FoundryVTT. FoudryVTT user management has drawbacks, some IMHO unacceptable from an UX perspective:
   * The admin/mastergm has to add users manually and set their passwords manually;
   * Passwords are hashed on the server with a one-way hash, the admin has to maintain some form of shadow registration of users and passwords;
   * Users are administrated on world level and if you have different hosts, users (and their passwords) have to be maintained seperately for each game;  
   * If you want a single password for a user, the admin has to sync this password accross all games the user is in;
-  * Every time the admin changes something, a world reloads for all connected users.
+  * Every time the admin commits a change in the user management page, the game reloads for all connected users.
   
 ## Foundry Autologin - User Experience
 
@@ -21,7 +21,7 @@ Only caveat is that the username in foundry is the same as the username in disco
 
 ## Foundry Autologin  - Implementation (for developers only)
 
-Changing this requires changes to the FoundryVTT server code, but FoundryVTT modules are only allowed to run client-side in the browser.
+Changing user management and the user login experience cannot be done with a module, but FoundryVTT modules are only allowed to run client-side in the browser within the scope of the active world. **This a good choice**. This requires changes to the FoundryVTT server code
 
 The sequence diagram of this solution
 
