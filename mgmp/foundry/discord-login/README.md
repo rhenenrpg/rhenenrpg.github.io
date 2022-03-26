@@ -25,4 +25,4 @@ The sequence diagram of the Discord Login
 
 ACL Groups are (re)assigned with each login. Changes to discord server membership and discord roles are not monitored real-time, so users will have to logout/login if either changes. 
 
-To enable discord login with ACL group assignment a dokuwiki plugin has been developed: [dokuwiki-plugin-oauthdiscord](https://github.com/rhenenrpg/dokuwiki-plugin-oauthdiscord)
+To enable discord login with ACL group assignment a dokuwiki plugin has been developed, which can be found in a it's own repository: [dokuwiki-plugin-oauthdiscord](https://github.com/rhenenrpg/dokuwiki-plugin-oauthdiscord)
