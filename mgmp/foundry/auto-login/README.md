@@ -151,7 +151,7 @@ add a single line to foundryvtt/resources/app/templates/views/layouts/main.hbs
     <script src="scripts/autologin.js" defer></script>
 ```    
 like 
-![]()
-copy [autologin.js](autologin.js) to /FoundryVTT-9.255/foundryvtt/resources/app/public/scripts
+![](addautologin.png)
+
 
 
