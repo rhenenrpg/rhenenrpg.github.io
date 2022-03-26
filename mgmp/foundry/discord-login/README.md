@@ -16,3 +16,9 @@ The logged in example user is assigned the groups to access the **tuesday campai
 
 It's not part of the discord login UXP, but when the user clicks the foundryvtt link, the game opens (without the user needing to login and/or input access keys).
 ![](ux-discord-login-5.png)
+
+
+## Discord Login - Implementation
+
+The sequence diagram of the Discord Login
+![authorization with discord](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rhenenrpg/rhenenrpg.github.io/main/uml/sd-login-oauth-discord.iuml)
