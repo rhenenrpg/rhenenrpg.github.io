@@ -17,7 +17,7 @@ After clicking on the link FoundryVTT opens the game, voila!
 
 ![](../discord-login/ux-discord-login-5.png)
 
-
+Only caveat is that the username in foundry is the same as the username in discord (plus discriminator).
 
 ## Foundry Autologin  - Implementation (for developers only)
 
