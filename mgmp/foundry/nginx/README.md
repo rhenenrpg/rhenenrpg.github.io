@@ -50,8 +50,8 @@ Block SG and RU visitors, there are 100+ daily requests fromthose countries. Pro
         if ( $http_cf_ipcountry = "RU" ) { return 403; }
 ```
 
-The dokuwiki instance is used for authentication and authorization of the complete site using nginx subrequest authentication.
-See [[https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-subrequest-authentication/]].
+The dokuwiki instance is used for authentication and authorization of the complete site using nginx [subrequest authentication]
+(https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-subrequest-authentication/).
 The dokuwiki part of this implementation can be found below.
 
 ```
