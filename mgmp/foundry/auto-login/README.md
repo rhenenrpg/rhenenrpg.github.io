@@ -9,11 +9,13 @@ User management has not been a priority in the development of FoundryVTT. Foudry
   
 ## Foundry Autologin - User Experience
 
-The implemented user experience has been
+The desirable and implemented user experience is simple. A user logs in with Discord and is then presented a start page with the FoundryVTT instances for which he/she/it is permitted.
 
 ![](../discord-login/ux-discord-login-4.png)
 
-![](ux-discord-login-5.png)
+After clicking on the link FoundryVTT opens the game, voila!
+
+![](../discord-login/ux-discord-login-5.png)
 
 
 
