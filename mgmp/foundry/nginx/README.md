@@ -7,6 +7,8 @@ Also the geo location of the request is added to the logformat ($http_cf_ipcount
 
 
 ```
+# nginx server configuration
+#
 log_format cloudflare '$proxy_add_x_forwarded_for - $remote_user [$time_local] '
                            '"$request" $status $body_bytes_sent '
                            '"$http_referer" "$http_user_agent" $http_cf_ipcountry';
