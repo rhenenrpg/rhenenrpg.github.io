@@ -14,4 +14,5 @@ When the gives permission, the website uses user username, servers and roles to 
 The logged in example user is assigned the groups to access the **tuesday campaign wiki** and it's associated **foundryvtt instance**, which currently has **Mad Biomancer's Tower** active. Links to the wiki and foundryvtt instance are shown on the start page.
 ![](ux-discord-login-4.png)
 
+It's not part of the discord login UXP, but when the user clicks the foundryvtt link, the game opens (without the user needing to login and/or input access keys).
 ![](ux-discord-login-5.png)
