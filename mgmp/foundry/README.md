@@ -9,5 +9,5 @@ From a high level perspective the solution looks like below figure:
 
 ![](solution%20high%20level.png)
 
-User accesses the site from a browser. Cloudflare is a gateway between internet and the local container instances. There is a container with nginx in the role as reverseproxy, a container for the wiki (login, landing page, access control) and a container with foundry servers instances. Lastly Discord is used for authentication and as input to assign access rights.
+Users access the site from a browser. Cloudflare is a gateway between internet and the local container instances. There is a container with nginx in the role as reverseproxy, a container for the wiki (login, landing page, access control) and a container with foundry servers instances. Lastly Discord is used for authentication and as input to assign access rights.
 
