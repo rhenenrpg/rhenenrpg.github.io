@@ -9,5 +9,6 @@ From a high level perspective the solution looks like below figure:
 
 ![](solution%20high%20level.png)
 
-Users access the site from a browser. [Cloudflare](cloudflare.md) is a gateway between internet and the local container instances. There is a container with nginx in the role as reverseproxy, a container for the wiki (login, landing page, access control) and a container with foundry servers instances. Lastly [Discord is used for authentication](discord-login) and as input to assign access rights in the wiki.
+Users access the site from a browser. [Cloudflare](cloudflare.md) is a gateway between internet and the local Linux container instances. There is a container with nginx in the role as reverseproxy, a container for the wiki (login, landing page, access control) and a container with foundry servers instances. Lastly [Discord is used for authentication](discord-login) and as input to assign access rights in the wiki.
 
+This solution is build on Linux, it is possible to transpose parts of this solution to mac or windows, but that is outside the scope of this site.
