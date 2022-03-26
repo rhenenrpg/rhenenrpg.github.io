@@ -36,7 +36,7 @@ Ensure that when a user types in rhenenrpg.net, the browser goes to the right st
         }
 ```
 
-It's a private site, so disallow robots
+It's a restricted site, so disallow robots
 ```
         location = /robots.txt {
                 add_header  Content-Type  text/plain;
