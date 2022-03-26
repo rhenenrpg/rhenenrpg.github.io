@@ -63,21 +63,24 @@ if the user belongs to group $route, the status is checked of the foundryvtt ins
   * returns a password that can be used to login this user in this foundryvtt instance.
 If the user belongs to group $route a link to the instance is presented and a hidden password is returned for use by the foundryvtt autologin javascript.
 
-## Foundry Autologin - Change 3: FoundryVTT custom api
+## Foundry Autologin - Change 3: FoundryVTT custom post
 
 Alas this functionality requires foundryvtt server changes, hosting on linux only requires the folder foundry/resources/app of a foundryvtt version. A folder that only contains public code, minimized code and images. 
 
-The natural place to add this custom api seems to be *foundryvtt/resources/app/dist/join.mjs* (i am open to better suggestions). This file is alas minimized, which means:
+The custom post "announce-discord-user" creates a user if it does not exist and assigns/updates it's password and role if needed.
+
+The natural place to add this post seems to be *foundryvtt/resources/app/dist/join.mjs* (i am open to better suggestions). This file is alas minimized, which means:
   * the file has to be made readable and changeable, for this js-beautify is used;
   * the variable names are shortened and can have different letters between different versions, this implies a manual retrofit in each new foundry version;
 
 There are two patches to join.mjs. 
-Change 1 Patch 1 is the addition of an extra import in the import section.
+
+#### Change 1 Patch 1 is the addition of an extra import in the import section.
 ```
 import { testPassword,randomString } from "../../core/auth.mjs";
 ```
 
-Change 1 Patch 2 is located in the method handlePost, below case "join":
+#### Change 1 Patch 2 is located in the method handlePost, below case "join":
 ```
                 break; // important: stop case "join"!
             case "announce-discord-user":
