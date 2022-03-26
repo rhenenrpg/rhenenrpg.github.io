@@ -1,6 +1,6 @@
 ## Discord Login - User Experience
 
-The user will open the website in a browser:
+The user will open the website in a browser.
 ![](ux-discord-login-1.png)
 
 Clicking on 'Login with Discord' yields the discord login page
