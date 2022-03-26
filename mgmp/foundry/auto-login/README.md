@@ -65,7 +65,8 @@ If the user belongs to group $route a link to the instance is presented and a hi
 
 ## Foundry Autologin - Change 3: FoundryVTT custom post
 
-Alas this functionality requires foundryvtt server changes, hosting on linux only requires the folder foundry/resources/app of a foundryvtt version. A folder that only contains public code, minimized code and images. 
+Alas this functionality requires foundryvtt core server changes, when adapting the foundryvtt core the update functionality **CANNOT*** be used anymore.
+New releases should be manually downloaded, patched and deploy to the server instances. Hosting on linux only requires the folder foundry/resources/app of a foundryvtt version. A folder that only contains public code, minimized code and images. 
 
 The custom post "announce-discord-user" creates a user if it does not exist and assigns/updates it's password and role if needed.
 
@@ -143,10 +144,10 @@ autologin.js waits until the join page is fully loaded and then
 Modules cannot effect the join page, so the second server change adds autologin.js and patches the main.hbs to include autologin.js.
 
 ### Change 4 Patch 1: Add autologin script
-copy [autologin.js](autologin.js) to foundryvtt/resources/app/public/scripts
+Copy [autologin.js](autologin.js) to foundryvtt/resources/app/public/scripts
 
-### Change 4 Patch 2: Make sure autologin script is loaded
-add a single line to foundryvtt/resources/app/templates/views/layouts/main.hbs
+### Change 4 Patch 2: load the autologin script 
+Add a single line to foundryvtt/resources/app/templates/views/layouts/main.hbs
 ```
     <script src="scripts/autologin.js" defer></script>
 ```    
