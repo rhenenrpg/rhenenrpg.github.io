@@ -7,5 +7,5 @@ The reasoning for some choices is shared for educational/comical purposes.*
 
 From a high level perspective the solution looks like below figure:
 
-![](solution%20high%20level.png)
+![](solution%20high%20level.png | width=400))
 
