@@ -30,9 +30,13 @@ The sequence diagram of this solution
 ![Autologin to Foundry](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rhenenrpg/rhenenrpg.github.io/main/uml/sd-autologin-foundry.iuml)
 
 
-## Foundry Autologin - Change 1 Dokuwiki foundrystatus page
+## Foundry Autologin - Change 1: Dokuwiki foundryvttstatus page
 
-```https://rhenenrpg.net/dokuwiki/doku.php?id=foundrystatus```
+a page 
+
+```
+https://rhenenrpg.net/dokuwiki/doku.php?id=foundrystatus
+```
 
 that is accessible to all and contains a plugin directive for each foundryvtt instance that can be accessed via this site.
 
@@ -41,6 +45,9 @@ that is accessible to all and contains a plugin directive for each foundryvtt in
 <foundryvttstatus route="vttsaturday" port="30001"> 
 ```
 
+## Foundry Autologin - Change 2: Dokuwiki foundryvttstatus plugin
+
+See [foundryvttstatus plugin](https://github.com/rhenenrpg/dokuwiki-plug-foundryvttstatus) for info.
 
 
 
