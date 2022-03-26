@@ -11,7 +11,7 @@ User management has not been a priority in the development of FoundryVTT. Foudry
 
 The implemented user experience has been
 
-![](ux-discord-login-4.png)
+![](../discord-login/ux-discord-login-4.png)
 
 ![](ux-discord-login-5.png)
 
