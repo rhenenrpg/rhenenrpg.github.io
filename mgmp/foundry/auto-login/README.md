@@ -142,6 +142,16 @@ autologin.js waits until the join page is fully loaded and then
 
 Modules cannot effect the join page, so the second server change adds autologin.js and patches the main.hbs to include autologin.js.
 
+### Change 4 Patch 1: Add autologin script
+copy [autologin.js](autologin.js) to foundryvtt/resources/app/public/scripts
 
+### Change 4 Patch 2: Make sure autologin script is loaded
+add a single line to foundryvtt/resources/app/templates/views/layouts/main.hbs
+```
+    <script src="scripts/autologin.js" defer></script>
+```    
+like 
+![]()
+copy [autologin.js](autologin.js) to /FoundryVTT-9.255/foundryvtt/resources/app/public/scripts
 
 
