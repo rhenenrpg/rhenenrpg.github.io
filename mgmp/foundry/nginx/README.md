@@ -67,7 +67,7 @@ The dokuwiki part of this implementation can be found below.
         }
 ```
 
-The dokuwiki instance does not require subrequest authentication, the right headers from Cloudflare need to be forwarded.
+The dokuwiki instance does not require subrequest authentication, the right headers from Cloudflare do need to be forwarded.
 ```
        location /dokuwiki/ {
                 # Set proxy headers
@@ -75,28 +75,49 @@ The dokuwiki instance does not require subrequest authentication, the right head
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header X-Forwarded-Proto $scheme;
                 proxy_set_header CF-IPCountry $http_cf_ipcountry;
-                proxy_pass http://192.168.1.26:80/;
+                proxy_pass http://XX.XX.X.XX:80/;
         }
 ```
  
+Each foundry instance will be accessable on a different location. Not only to enable multiple foundryvtt instances in parallel, but also because of the authorization model.
+
+```
+        location /vttdinsdag/ {
+                auth_request     /auth;
+                # Set proxy headers
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+
+                # These are important to support WebSockets
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_pass http://XX.XX.XX.XX:30000/vttdinsdag/;
+
+        }
+```
+
+That's it
+
+## Authorization model
+
+Authorization is based on dokuwiki groups. The location is prefixed with 'x' and matched with the groups that a user belongs too. So users with group ''xvttdinsdag'' are allowed to access to ''https://rhenenrpg.net/vttdinsdag/...''
 
 
+## Dokuwiki - Implementation 
 
-**Authorization model**
-
-Authorization is based on groups. The first segment of the path is prefixed with 'x' and matched with the groups that a user belongs too. So users with group ''xvtt'' are allowed to access to ''https://mydomain.com/vtt/...''
-
-
-**Implementation on Dokuwiki instance**
-
-<code>
-copy doku.php mynginxauth.php
-</code>
+Dokuwiki is served from location /dokuwiki/ as set in the configuration item Basic:basedir. Ensure that Dokuwiki sets the session cookie for all requests on the domain. This can be achieved by setting the configuration Basic:cookiedir to /.
 
 
-and then add below the require of init.php
+For each http request to a restricted location, nginx will pass a subrequest to a dokuwiki endpoint. This endpoint should either retun a 200 OK or a 401 Unauthorized. In order to facilitate this endpoint, a copy of doku.php has been adapted.
 
-<code>
+```
+cp doku.php mynginxauth.php
+```
+
+and then below the require of init.php the following has been added
+
+```
 // load and initialize the core system
 require_once(DOKU_INC.'inc/init.php');
 // Start addition
@@ -113,8 +134,7 @@ if(isset($_SERVER['HTTP_X_ORIGINAL_URI'])) { // authentication mode
 } 
 dbglog('orig_uri is not set, acting like doku.php');
 // End addition
-</code>
+```
 
 
-Dokuwiki is served from location /dokuwiki/ as set in the configuration item Basic:basedir. Ensure that Dokuwiki sets the session cookie on / by setting the configuration Basic:cookiedir to /.
 
