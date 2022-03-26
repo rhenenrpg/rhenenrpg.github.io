@@ -23,7 +23,7 @@ Only caveat is that the username in foundry is the same as the username in disco
 
 Changing user management and the user login experience cannot be done with a module, but FoundryVTT modules are only allowed to run client-side in the browser within the scope of the active world. **This a good choice**. 
 
-However, i still want a better user login experience. The implemented solution  requires development in three seperate places, one in dokuwiki and two  changes to the FoundryVTT server code.
+However, i still want a better user login experience. The implemented solution requires development in four places, two in dokuwiki and two changes to the FoundryVTT server code.
 
 The sequence diagram of this solution
 
