@@ -1,3 +1,8 @@
+## Discord Login - Introduction
+
+Since i started to play online i have used Discord for voice and video communication with fellow RPG enthousiasts. 
+Not liking the hassles of the administration of user passwords and user access, it was decided to make use of [Discord OAuth2](https://discord.com/developers/docs/topics/oauth2) to authenticate users and use user data (guilds, roles) to determine the allowed access of users. This page decribes how this works of the user and afterwards describes how it has been implemented.
+
 ## Discord Login - User Experience
 
 The user will open the website in a browser.
@@ -18,7 +23,7 @@ It's not part of the discord login UXP, but when the user clicks the foundryvtt 
 ![](ux-discord-login-5.png)
 
 
-## Discord Login - Implementation
+## Discord Login - Implementation (for developers only)
 
 The sequence diagram of the Discord Login
 ![authorization with discord](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rhenenrpg/rhenenrpg.github.io/main/uml/sd-login-oauth-discord.iuml)
