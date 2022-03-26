@@ -63,7 +63,71 @@ if the user belongs to group $route, the status is checked of the foundryvtt ins
   * returns a password that can be used to login this user in this foundryvtt instance.
 If the user belongs to group $route a link to the instance is presented and a hidden password is returned for use by the foundryvtt autologin javascript.
 
-## Foundry Autologin - Change 3: Foundry secret api
+## Foundry Autologin - Change 3: FoundryVTT custom api
+
+Alas this functionality requires foundryvtt server changes, hosting on linux only requires the folder foundry/resources/app of a foundryvtt version. A folder that only contains public code, minimized code and images. 
+
+The natural place to add this custom api seems to be *foundryvtt/resources/app/dist/join.mjs* (i am open to better suggestions). This file is alas minimized, which means:
+  * the file has to be made readable and changeable, for this js-beautify is used;
+  * the variable names are shortened and can have different letters between different versions, this implies a manual retrofit in each new foundry version;
+
+There are two patches to join.mjs. 
+Change 1 Patch 1 is the addition of an extra import in the import section.
+```
+import { testPassword,randomString } from "../../core/auth.mjs";
+```
+
+Change 1 Patch 2 is located in the method handlePost, below case "join":
+```
+                break; // important: stop case "join"!
+            case "announce-discord-user":
+                // config is in t, game in o
+                if("::ffff:XX.XX.XX.XX" !== s.socket.address().address) { // check whether dokuwiki calls us
+                    logger.warn(`${s.body.action} called from wrong address`);
+                    return e.status(403), e.send("ERROR.InvalidAPIKey"), e;
+                }		        
+                if("VERYSECRETKEY" !== s.headers["mes-api-key"]) { 
+                    logger.warn(`${s.body.action} called without the right APIKey`);
+                    return e.status(403), e.send("ERROR.InvalidAPIKey"), e;
+                }		        
+                const t = await db.User.find();
+                // choice: store password for user in extra file to avoid it being passed to client as part of user.
+                const mapfilename = `${o.world.path}/data/discordusers.json`;
+                let map = (fs.existsSync(mapfilename)) ? JSON.parse(fs.readFileSync(mapfilename, "utf8")) : {};
+                const userUpdates = {}
+                let u;
+                for (let e of t) {                                    
+                    if ( s.body.username == e.name ) {
+                        u = e;
+                        a.userid = u.id;
+                        if ( s.body.username in map && testPassword(map[s.body.username].password, u.data.password, u.data.passwordSalt)) {
+                            logger.info(`${s.body.action} existing discord user ${s.body.username}`);                
+                            a.status = "existinguser";
+                            a.password = map[s.body.username].password;                                
+                        } else {
+                            a.status = "existinguser.newpassword";
+                            a.password = userUpdates["password"] = randomString(24);
+                        }
+                    }  
+                }
+                if (!u) {
+                    logger.info(`${s.body.action} create fvtt user for discord user ${s.body.username}`);
+                    u = await db.User.create({name: s.body.username}); 
+                    a.status = "newuser.newpassword";
+                    a.password = userUpdates["password"] = randomString(24);
+                }
+                if(s.body.role !== u.data.role) {
+                    a.status += ".updaterole";
+                    userUpdates["role"] = s.body.role;
+                }
+                if (Object.keys(userUpdates).length) {                    
+                    await u.update(userUpdates);        
+                    map[s.body.username] = { password: a.password };
+                    fs.writeFileSync(mapfilename, JSON.stringify(map));
+                }
+                a.worldname = o.world.data["name"];
+                a.worldtitle = o.world.data["title"];          
+```
 
 
 
