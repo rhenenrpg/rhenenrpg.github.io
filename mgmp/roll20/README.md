@@ -4,7 +4,7 @@ The Roll20 solution for Multi-GM Multi-Player initiatives is Roll20 with some co
 
 ![](roll20-opening-page.png)
 
-A roll20 campaign acts as characterhub. Each GM uses own Play campaign(s) during sessies. Some GMs prefer a single play campaign, other GMs like to make a Seperate campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the character played in the gmnotes of the original character in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
+A roll20 campaign acts as characterhub. Each GM uses own Play campaign(s) during sessies. Some GMs prefer a single play campaign, other GMs like to make a Seperate campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
 
 ### Characterhub
 
@@ -28,11 +28,16 @@ GMs see all characters in the hub and there can be many, hence a naming conventi
 
 #### Characterhub script - Create defaulttoken
 
-Players cannot change the tokens of character, but are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
+Roll20 does not allow players to change the tokens of their character, but players are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
 
 #### Characterhub script - Register last update of gmnotes
 
 After a game each GM registers the play date and earned XP in the gmnotes of the character. The script stores the date of this change in  **ffwgmnoteslastupdate**. This update does not always happen, see note 1)
+
+#### Characterhub script - !reportAndFix command
+
+Because of note 1) the reportAndFix checks and if needed updates all characters in the characterhub. All reporting is send to the API log.
+
 
 #### Characterhub script - Note 1) APIscripts crash or stop working
 
