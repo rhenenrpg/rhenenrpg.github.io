@@ -55,6 +55,4 @@ Every time a character is added or a player comes online, the script checks whet
 
 It is perfectly doable to transport characters from the hub to a play game manually, but thanks to the right setup i normally perform this at the start of the session. With all players in a discord video channel watching life.
 
-To transport characters from the hub to a play game three [Google Chrome bookmarklets](booksmarks-ffw.html) have been created. Before describing each bookmarklet, here is a small video
-
-![](roll20-character-transport.mp4)
+To transport characters from the hub to a play game three [Google Chrome bookmarklets](booksmarks-ffw.html) have been created. Before each bookmarklet is described, please watch this [small video](roll20-character-transport.mp4)
