@@ -1,4 +1,4 @@
-## My Foundry self hosting solution for Multi-GM Multi-Player
+## My Foundry solution for Multi-GM Multi-Player
 
 *Note: on this site the solution is explicitly named 'my' foundry solution. The use of 'my' is not because this solution is the best,
 but to avoid discussions and opinions with zealous know-it-all internet trolls (you know who you are!). 
