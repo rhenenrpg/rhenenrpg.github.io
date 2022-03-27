@@ -1,5 +1,3 @@
-// source https://gist.github.com/MartijnSanders/072b9af2eea5d362cff5cac90eea4633
-
 var FFW = FFW || (function() { // eslint-disable-line no-unused-vars
     'use strict';
 
