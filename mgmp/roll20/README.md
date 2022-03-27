@@ -14,6 +14,11 @@ This script provide the following functionalities.
 
 #### Characterhub - New Character Button
 
+Every time a player launches the characterhub campaign, a pink button is shown in the chat. When the player presses this button:
+  * a new character is created;
+  * the character is assigned to the player;
+  * the roll20 accountid of the player is stored in the character for autoassignment in GM games (see below).
+
 ![](new-character-button.png)
 
 
