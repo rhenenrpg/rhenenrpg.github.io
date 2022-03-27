@@ -25,7 +25,10 @@ After clicking the button, the player can open the new character and use the cha
 
 #### Characterhub script - Enforce character naming convention
 
-GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced whenever the charactername or the player display name changes.
+GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced whenever the charactername changes, the player display name changes or when the player (re)launches the campaign.
+
+#### Characterhub script - Create defaulttoken
+
 
 
 #### Characterhub script - Register last update of gmnotes
