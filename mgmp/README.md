@@ -4,3 +4,5 @@ Many people like to play in initiatives that are Multi Gamemaster, Multi Player.
 
 
 This site describes two solutions. A [solution based on Roll20](roll20), which is currently used bij Frequent Freewheelers, an initiative with about 6 sessions per week. And a [Work-In-Progress solution for FoundryVTT](foundry) that I am setting up to support the flash kids that think Roll20 is too oldskool.
+
+Both solutions assume that out-of-game chat, lfg, voice and video calls take place via Discord.
