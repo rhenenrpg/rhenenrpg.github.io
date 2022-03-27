@@ -9,4 +9,4 @@ Having been an avid Dungeon and Dragon player and gamemaster since my university
 
 [Roll20 Solution](/mgmp/foundry/selfhosting.md) - direct link to Multi-Gamemaster Multi-Player solution that is currently used to play on average 6 oneshots per week organized by a community of a dozen active GMs.
 
-[Self Hosted FoundryVTT Solution (Work-In-Progress)](/mgmp/foundry/selfhosting.md) - direct link to the way i host FoundryVTT securely with discord login and no password on FoundryVTT.
+[Self Hosted FoundryVTT Solution](/mgmp/foundry/selfhosting.md) - direct link to the way i host FoundryVTT securely with discord login and no password on FoundryVTT.
