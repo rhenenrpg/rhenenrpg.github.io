@@ -36,7 +36,7 @@ After a game each GM registers the play date and earned XP in the gmnotes of the
 
 #### Characterhub script - !reportAndFix command
 
-Because of note 1) the reportAndFix checks and if needed updates all characters in the characterhub. All reporting is send to the API log.
+Because of note 1) there is a !reportAndFix command that checks and if needed updates all characters in the characterhub. All reporting is send to the API log.
 
 
 #### Characterhub script - Note 1) APIscripts crash or stop working
