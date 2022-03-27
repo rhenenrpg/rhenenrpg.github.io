@@ -28,7 +28,7 @@ GMs see all characters in the hub and there can be many, hence a naming conventi
 
 #### Characterhub script - Create defaulttoken
 
-Players cannot change the tokens of character, but are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty.
+Players cannot change the tokens of character, but are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
 
 #### Characterhub script - Register last update of gmnotes
 
