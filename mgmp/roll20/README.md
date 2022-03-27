@@ -44,15 +44,34 @@ API Scripts have the tendency to stop working for no reason. A manual restart is
 
 
 ## Play Campaign
-Each GM uses their own play campaigns. A play campaign has to be created by a someone with a roll20 account and a Pro Subscription. The same script as in the Characterhub can be used here.
+Each GM uses their own play campaigns. A play campaign has to be created by a someone with a roll20 account and a Pro Subscription to enable importing. The same script as in the Characterhub can be used here, but a GM can also choose to assign characters manually to players.
 
 ## Play Campaign script - assigning imported characters
 
 Every time a character is added or a player comes online, the script checks whether there are characters with an attribute **ffwplayerid** that are not assigned to the player with the registered roll20 account id. If so, the character is assigned to that player. 
 
-
 ## Transporting characters with the Charactervault
 
 It is perfectly doable to transport characters from the hub to a play game manually, but thanks to the right setup i normally perform this at the start of the session. With all players in a discord video channel watching life.
 
-To transport characters from the hub to a play game three [Google Chrome bookmarklets](booksmarks-ffw.html) have been created. Before each bookmarklet is described, please watch this [small video](roll20-character-transport.mp4)
+To transport characters from the hub to a play game three [Google Chrome bookmarklets](booksmarks-ffw.html) have been created. These bookmarklets ONLY work in Google Chrome. Before the workflow and each bookmarklet is described, please watch this [small video](roll20-character-transport.mp4).
+
+#### Transport characters - step 1 - select tokens
+
+In the characterhub the GM drops the tokens of the characters that will join the session on a private page.
+
+#### Transport characters - step 2 - transport characters from the hub into the vault
+
+Execute the bookmarklet **CharVault Import All Characters from this page** and all characters on the page are imported to the Character Vault. 
+
+#### Transport characters - step 3 - transport character from the vault to the play game
+
+Open or Refresh the roll20 Character Vault page. 
+In the dropdown box of the first character, select the play campaign.
+Execute the bookmarklet **CharVault Export All** and all characters in the Character Vault are exported to the play game. 
+*Recently the Character Vault Page has been paginated. So there is now a limit to the number of characters in a party. *
+
+#### Transport characters - step 4 - go to the play campaign
+
+
+
