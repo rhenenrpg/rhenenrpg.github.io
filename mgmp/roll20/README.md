@@ -34,9 +34,9 @@ Roll20 does not allow players to change the tokens of their character, but playe
 
 After a game each GM registers the play date and earned XP in the gmnotes of the character. The script stores the date of this change in  **ffwgmnoteslastupdate**. This update does not always happen, see note 1)
 
-#### Characterhub script - !reportAndFix command
+#### Characterhub script - !ffw --report and !ffw fix commands
 
-Because of note 1) there is a !reportAndFix command that checks and if needed updates all characters in the characterhub. All reporting is send to the API log.
+Because of note 1) there is are two command that check and if needed update all characters in the characterhub. All reporting is send to the API log.
 
 
 #### Characterhub script - Note 1) APIscripts crash or stop working
