@@ -8,7 +8,7 @@ A roll20 campaign acts as characterhub. Each GM uses own game(s) during game nig
 
 ### Characterhub
 
-Characters are created and maintained in the characterhub. The Characterhub is created by someone with a Roll20 Pro subscription to allow everybody to  export characters and running the [helper apiscript](https://gist.github.com/MartijnSanders/072b9af2eea5d362cff5cac90eea4633).
+Characters are created and maintained in the characterhub. The Characterhub is created by someone with a Roll20 Pro subscription to allow everybody to  export characters and running the [helper apiscript](apiscript-ffw-v0.0.7.js).
 
 This script provide the following functionalities.
 
