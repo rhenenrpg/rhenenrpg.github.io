@@ -12,7 +12,8 @@ Characters are created and maintained in the characterhub. The Characterhub is c
 
 This script provide the following functionalities.
 
+#### Characterhub - New Character Button
 
-
+![](new-character-button.png)
 
 
