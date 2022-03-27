@@ -23,7 +23,9 @@ Every time a player launches the characterhub campaign, a pink button is shown i
 
 After clicking the button, the player can open the new character and use the charactermancer to stat it out.
 
-#### Characterhub script - New Character Button
+#### Characterhub script - Enforce character naming convention
+
+GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced whenever the charactername or the player display name changes.
 
 
 #### Characterhub script - Register last update of gmnotes
