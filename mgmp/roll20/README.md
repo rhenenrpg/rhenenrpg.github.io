@@ -72,6 +72,4 @@ Execute the bookmarklet **CharVault Export All** and all characters in the Chara
 *Recently the Character Vault Page has been paginated. So there is now a limit to the number of characters in a party. *
 
 #### Transport characters - step 4 - go to the play campaign
-
-
-
+And play!
