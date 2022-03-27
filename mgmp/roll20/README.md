@@ -57,4 +57,4 @@ It is perfectly doable to transport characters from the hub to a play game manua
 
 To transport characters from the hub to a play game three [Google Chrome bookmarklets](booksmarks-ffw.html) have been created. Before describing each bookmarklet, here is a small video
 
-![]( )
+![](roll20-character-transport.mp4)
