@@ -1,5 +1,5 @@
 ## Requirements
 
-| ID | Description | Sol1 | Sol 2 |
+| ID | Description | Roll20 | Foundry |
 | -- | --- | -- | -- |
-| 01 | bla | No | Yes |
+| 01 | Players use one account to access the participating VTTs | Yes | Yes (1) |
