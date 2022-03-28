@@ -6,7 +6,7 @@ There are many ways a solution can be composed, but this is the solution that i 
 The reasoning for some choices is shared for educational/comical purposes.*
 
 
-Note: this solution is a WIP, the [hosting part of the solution](selfhosting.md) has just been finished. Many more issues and functionalities have to be implemented yet.
+Note: this solution is a WIP, the [hosting part of the solution](selfhosting.md) has just been finished. Many more features and functionalities have to be implemented yet.
 
 
 Todo's: 
