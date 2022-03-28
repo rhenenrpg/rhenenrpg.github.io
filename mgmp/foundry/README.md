@@ -7,3 +7,12 @@ The reasoning for some choices is shared for educational/comical purposes.*
 
 
 Note: this solution is a WIP, the [hosting part of the solution](selfhosting.md) has just been finished. Many more issues and functionalities have to be implemented yet.
+
+
+Todo's: 
+  * Character Hub: players can upload character tokens to a good location and CANNOT overwrite other players tokens
+  * Character Hub: players can import character from dndbeyond
+  * Character Hub: apply naming convention for actors or facilitate actor selection by player
+  * Character Hub: apply token lighting standards
+  * Character transport: copy over actor from hub to play game (including token etc)
+  * Easy GM to Play game access control mapping
