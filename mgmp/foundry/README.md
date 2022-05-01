@@ -6,7 +6,7 @@ There are many ways a solution can be composed, but this is the solution that i 
 The reasoning for some choices is shared for educational/comical purposes.*
 
 
-Note: this solution is a WIP, the [hosting part of the solution](selfhosting.md) has just been finished. Many more features and functionalities have to be implemented yet.
+Note: this solution is a Work In Progress, the [hosting part of the solution](selfhosting.md) has just been finished. Many more features and functionalities have to be implemented yet.
 
 
 Todo's: 
@@ -15,4 +15,4 @@ Todo's:
   * Character Hub: apply naming convention for actors or facilitate actor selection by player
   * Character Hub: apply token lighting standards
   * Character transport: copy over actor from hub to play game (including token etc)
-  * Easy GM to Play game access control mapping
+  * Play game access control: easy to give gms and players access
