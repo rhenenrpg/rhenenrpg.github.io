@@ -9,7 +9,7 @@ User management has not been a priority in the development of FoundryVTT. Foundr
   
 ## Foundry Autologin - User Experience
 
-The desirable and implemented user experience is simple from a user perspective. A user logs in with Discord and is presented a start page. The start page shows all FoundryVTT instances that can be accessed.
+The desirable and implemented user experience is simple from a user perspective. A user logs in with Discord and is presented a start page. The start page shows all FoundryVTT instances that can be accessed by that user.
 
 ![](../discord-login/ux-discord-login-4.png)
 
