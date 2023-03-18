@@ -21,7 +21,7 @@ Only caveat is that the username in foundry is the same as the username in disco
 
 ## Foundry Autologin  - Implementation (for developers only)
 
-Changing user management and the user login experience cannot be done with a module, but FoundryVTT modules are only allowed to run client-side in the browser within the scope of the active world. **This a good choice**. 
+Changing user management and the user login experience cannot be done with a module, as FoundryVTT modules are only allowed to run client-side in the browser within the scope of the active world. **This a good choice**. 
 
 However, i still want a better user login experience. The implemented solution requires development in four places, two in dokuwiki and two changes to the FoundryVTT server code.
 
