@@ -29,9 +29,9 @@ rp --> browser : return foundrystatus page
 user -> browser: see foundrystatus page
 user -> browser: open 1 foundry world
 browser -> rp: check authorization for /world
-alt user not authorized authorization for /world
+alt user is not authorized for /world
 rp --> browser: redirect to start page
-else
+else user is authorized for /world
 rp -> foundry: /world/join
 foundry --> rp: return join page
 rp --> browser: return join page
