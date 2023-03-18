@@ -1,6 +1,6 @@
 ## Foundry Autologin
 
-User management has not been a priority in the development of FoundryVTT. FoudryVTT user management has drawbacks, some IMHO unacceptable from an UX perspective:
+User management has not been a priority in the development of FoundryVTT. FoundryVTT user management has drawbacks, some IMHO unacceptable from an UX perspective:
   * The admin/mastergm has to add users manually and set their passwords manually;
   * Passwords are hashed on the server with a one-way hash, the admin has to maintain some form of shadow registration of users and passwords;
   * Users are administrated on world level and if you have different hosts, users (and their passwords) have to be maintained seperately for each game;  
