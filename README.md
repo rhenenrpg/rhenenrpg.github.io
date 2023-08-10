@@ -7,6 +7,6 @@ Having been an avid Dungeon and Dragon player and gamemaster since my university
 
 Community Play aka [Multi-Gamemaster Multi-Player](/mgmp/README.md) - my rantings about technical solutions how to support this mode of play.
 
-[Roll20 Solution](/mgmp/roll20/README.md) - description of the Multi-Gamemaster Multi-Player solution that is currently used to play on average 6 oneshots per week organized by a community of a dozen active GMs.
+[Roll20 Solution](/mgmp/roll20/README.md) - description of the Community Play / Multi-Gamemaster Multi-Player solution that is currently used to play on average 6 oneshots per week organized by a community of a dozen active GMs.
 
 [Self Hosted FoundryVTT Solution](/mgmp/foundry/selfhosting.md) - description of the way i host FoundryVTT securely with discord login and users not having to fill in a password in FoundryVTT.
