@@ -1,14 +1,18 @@
-## Roll20 solution for Multi-GM Multi-Player 
+## Roll20 solution for Community Play (aka Multi-GM Multi-Player).
 
-The Roll20 solution for Multi-GM Multi-Player initiatives is Roll20 with some conventions and helper scripts. 
+In this section a solution is described to organize Community Play in Roll20. These kind of initiatives can be played in Roll20 as-is, but a few conventions and helper scripts make it a lot faster and easier. 
+
+Within the Community Play one roll20 campaign acts as Character Hub. When the initative and the amount of character grows, there can be a Character Hub for each Tier of Play. The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub. The Gamemasters use the GM Notes to note when characters have participated in a session and how many XP/loot was gained. The Character Hub is created by a Roll20 user with a pro subscription to allow everybody to export characters and to run the CommunityPlaySupport roll20 mod.
+ 
+Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single play campaign, other GMs like to make a seperate play campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
+
 
 ![](roll20-opening-page.png)
 
-A roll20 campaign acts as characterhub. Each GM uses own Play campaign(s) during sessies. Some GMs prefer a single play campaign, other GMs like to make a Seperate campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
 
 ## Characterhub
 
-Characters are created and maintained in the characterhub. The Characterhub is created by someone with a Roll20 Pro subscription to allow everybody to  export characters and running the [helper apiscript](apiscript-ffw-v0.0.7.js).
+Characters are created and maintained in the characterhub. The Characterhub is created by someone with a Roll20 Pro subscription to allow everybody to export characters and running the [helper apiscript](apiscript-ffw-v0.0.7.js).
 
 This script provide the following functionalities.
 
