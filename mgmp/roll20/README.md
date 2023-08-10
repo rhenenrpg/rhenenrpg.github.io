@@ -12,13 +12,18 @@ Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single 
 
 ## Characterhub
 
-Characters are created and maintained in the characterhub. The Characterhub is created by someone with a Roll20 Pro subscription to allow everybody to import/export characters and running the CommunityPlaySupport roll20 [mod](apiscript-ffw-v0.0.7.js).
+Characters are created and maintained in the characterhub. The Character Hub is created by someone with a Roll20 Pro subscription for three reasons:
+  * the owner of the Character Hub should have a lot of roll20 compendia to be able share and curate content available in the charactermancer.  
+  * to allow everybody to import/export characters
+  * to run the CommunityPlaySupport [roll20 mod](apiscript-ffw-v0.0.7.js).
 
 #### Characterhub - Curation of Compendium Content
 
 The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub.
 
-This script provide the following functionalities.
+### Characterhub - Roll20 Mod
+
+This roll20 mod/script provides the following functionalities.
 
 #### Characterhub script - New Character Button
 
