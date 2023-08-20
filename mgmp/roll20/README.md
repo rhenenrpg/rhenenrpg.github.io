@@ -6,7 +6,7 @@ This solution works for Community Plays where one roll20 campaign acts as Charac
  
 Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single play campaign, other GMs like to make a seperate play campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
 
-
+Next image shows how the games from a Community Play can look like in Roll20.
 ![](roll20-opening-page.png)
 
 
