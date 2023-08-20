@@ -13,19 +13,19 @@ Next image shows how the games from a Community Play can look like in Roll20.
 ## Characterhub
 
 Characters are created and maintained in the characterhub. The Character Hub is created by someone with a Roll20 Pro subscription for three reasons:
-  * the owner of the Character Hub should have a lot of roll20 compendia to be able share and curate content available in the charactermancer.  
-  * to allow everybody to import/export characters
-  * to run the CommunityPlaySupport [roll20 mod](apiscript-ffw-v0.0.7.js).
+  * the owner of the Character Hub should have a lot of roll20 compendia to be able share and curate content available in the charactermancer,
+  * to allow everybody to import/export characters,
+  * to run the CommunityPlaySupport roll20 mod.
 
-#### Characterhub - Curation of Compendium Content
+### Characterhub - Curation of Compendium Content
 
 The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub.
 
 ### Characterhub - Roll20 Mod
 
-This roll20 mod/script provides the following functionalities.
+The [roll20 Community Play Support mod](https://gist.github.com/MartijnSanders/072b9af2eea5d362cff5cac90eea4633) provides the following functionalities.
 
-#### Characterhub script - New Character Button
+#### Characterhub Community Play Support - New Character Button
 
 Every time a player launches the characterhub campaign, a pink button is shown in the chat. When the player presses this button:
   * a new character is created;
@@ -35,11 +35,11 @@ After clicking the button, the player can open the new character and use the cha
 
 ![](new-character-button.png)
 
-#### Characterhub script - Enforce character naming convention
+#### Characterhub Community Play Suppor - Enforce character naming convention
 
 GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced whenever the charactername changes, the player display name changes or when the player (re)launches the campaign.
 
-#### Characterhub script - Create defaulttoken
+#### Characterhub Community Play Support mod - Create defaulttoken
 
 Roll20 does not allow players to change the tokens of their character, but players are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
 
