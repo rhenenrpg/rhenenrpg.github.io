@@ -22,19 +22,19 @@ Characters are created and maintained in the characterhub. The Character Hub is 
   * to allow all players to import/export characters regardless of subscription,
   * to run the CommunityPlaySupport roll20 mod.  
   
-#### Curation of Compendium Content
+### Curation of Compendium Content
 
 The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. This means that the creator needs to explicitly share all compendiums that AND explicity block all other compendiums. All players create and store their character in the Character Hub. 
 Note that the owner of the Characterhub needs to turn on Compendium Sharing when creating the game and then *never* turn it off again.
 
-#### Characterhub - Roll20 Mod
+### Characterhub - Roll20 Mod
 
 The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.github.io/blob/main/mgmp/roll20/CommunityPlaySupport.js) provides the following functionalities:
 
-1. New/Open Character Button
-(If the setting playerCharacterLimit is larger than 0)
-..Every time a player launches the characterhub campaign, a button is shown in the chat. 
-When the player presses this button:
+#### New/Open Character Button
+(If the setting playerCharacterLimit is larger than 0) Every time a player launches the characterhub campaign, a button is shown in the chat. This button will either be a new character button or a open character button.
+
+When the player presses the new character  button:
 ..* a new character is created;
 ..* the character is assigned to the player;
 ..* the roll20 accountid of the player is stored in attribute **ffwplayerid** so characters can be automaticallty assigned in GM games (see below).
@@ -44,7 +44,7 @@ If the setting playerCharacterLimit is set to 0, the mod never shows buttons.
 
 ![](new-character-button.png)
 
-2. Enforce character naming convention
+#### Enforce character naming convention
 
 GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced. 
 Enforcement takes place whenever a charactername changes, a player display name changes or when a player (re)launches the campaign.
