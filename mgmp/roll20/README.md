@@ -44,7 +44,7 @@ After clicking the button, the player can open the new character and use the cha
 
 If the setting playerCharacterLimit is set to 0, the mod never shows buttons.
 
-**Note:** Roll20 recently introduce a +Character button that can be used by all players. 
+**Note:** Roll20 recently introduce a +Character button that can be used by all players. This button is turned **off** and *should not* be used. The reason  is twofold: firstly there is no limit to the number of characters a player can create and secondly the +Character Button only assigns characters to players, not to Gamemasters. This means that the mod cannot assign the roll20 accountid of gamemasters to characters.
 
 ![](new-character-button.png)
 
