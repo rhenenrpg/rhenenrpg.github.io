@@ -33,7 +33,7 @@ The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.g
 
 1. New/Open Character Button
 (If the setting playerCharacterLimit is larger than 0)
-Every time a player launches the characterhub campaign, a button is shown in the chat. 
+..Every time a player launches the characterhub campaign, a button is shown in the chat. 
 When the player presses this button:
   * a new character is created;
   * the character is assigned to the player;
