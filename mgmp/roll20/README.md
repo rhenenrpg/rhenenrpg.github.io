@@ -19,7 +19,8 @@ Characters are created and maintained in the characterhub. The Character Hub is 
 
 ### Characterhub - Curation of Compendium Content
 
-The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub.
+The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. This means that the creator needs to explicitly share all compendiums that AND explicity block all other compendiums. 
+All players create and store their character in the Character Hub.
 
 ### Characterhub - Roll20 Mod
 
