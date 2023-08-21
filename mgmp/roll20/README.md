@@ -14,19 +14,19 @@ Next image shows how the games from a Community Play can look like in Roll20.
 
 Characters are created and maintained in the characterhub. The Character Hub is created by someone with a Roll20 Pro subscription for three reasons:
   * the owner of the Character Hub should have a lot of roll20 compendia to be able share and curate content available in the charactermancer,
-  * to allow everybody to import/export characters,
-  * to run the CommunityPlaySupport roll20 mod.
-
-### Characterhub - Curation of Compendium Content
+  * to allow all players to import/export characters regardless of subscription,
+  * to run the CommunityPlaySupport roll20 mod.  
+  
+#### Curation of Compendium Content
 
 The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. This means that the creator needs to explicitly share all compendiums that AND explicity block all other compendiums. 
 All players create and store their character in the Character Hub.
 
-### Characterhub - Roll20 Mod
+#### Characterhub - Roll20 Mod
 
 The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.github.io/blob/main/mgmp/roll20/CommunityPlaySupport.js) provides the following functionalities:
 
-#### Characterhub Community Play Support - New Character Button
+1. New Character Button
 
 Every time a player launches the characterhub campaign, a pink button is shown in the chat. When the player presses this button:
   * a new character is created;
@@ -34,21 +34,23 @@ Every time a player launches the characterhub campaign, a pink button is shown i
   * the roll20 accountid of the player is stored in attribute **ffwplayerid** so characters can be automaticallty assigned in GM games (see below).
 After clicking the button, the player can open the new character and use the charactermancer to stat it out.
 
+If the setting  playerCharacterLimit is set to 0, the mod never shows buttons.
+
 ![](new-character-button.png)
 
-#### Characterhub Community Play Suppor - Enforce character naming convention
+2. Enforce character naming convention
 
-GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced whenever the charactername changes, the player display name changes or when the player (re)launches the campaign.
+GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced. 
+Enforcement takes place whenever a charactername changes, a player display name changes or when a player (re)launches the campaign.
 
-#### Characterhub Community Play Support mod - Create defaulttoken
+3. Create or Update defaulttoken
 
-Roll20 does not allow players to change the tokens of their character, but players are allowed to set the avatar of their characters. When the avatar is set, the script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and link to the HP and AC are also set. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
+Until recently roll20 did not allow players to change the tokens of their character, but players were and still are allowed to set the avatar of their characters. 
+If the setting avatarIsDefaultToken is on, the defaulttoken of character is automatically set when the avatar changes and/or when the charactername changes.
+The script creates a defaulttoken based on the avatar. The name displayed below the token is without *(player displayname)* and bar1 and bar2 are filled/linked to HP and AC of the linked character. Settings for dynamic lighting left empty, when the script was developed dynamic lighting was in flux and it was decided to use manual fog only.
 
-#### Characterhub script - Register last update of gmnotes
 
-After a game each GM registers the play date and earned XP in the gmnotes of the character. The script stores the date of this change in  **ffwgmnoteslastupdate**. This update does not always happen, see note 1)
-
-#### Characterhub script - !ffw --report and !ffw --fix commands
+#### Characterhub mod - !cps --fix command
 
 Because of note 1) there is are two command that check and if needed update all characters in the characterhub. All reporting is send to the API log.
 
