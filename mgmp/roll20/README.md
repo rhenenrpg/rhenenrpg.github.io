@@ -35,9 +35,9 @@ The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.g
 (If the setting playerCharacterLimit is larger than 0)
 ..Every time a player launches the characterhub campaign, a button is shown in the chat. 
 When the player presses this button:
-  * a new character is created;
-  * the character is assigned to the player;
-  * the roll20 accountid of the player is stored in attribute **ffwplayerid** so characters can be automaticallty assigned in GM games (see below).
+..* a new character is created;
+..* the character is assigned to the player;
+..* the roll20 accountid of the player is stored in attribute **ffwplayerid** so characters can be automaticallty assigned in GM games (see below).
 After clicking the button, the player can open the new character and use the charactermancer to stat it out.
 
 If the setting playerCharacterLimit is set to 0, the mod never shows buttons.
