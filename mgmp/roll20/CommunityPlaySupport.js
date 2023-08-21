@@ -1,4 +1,4 @@
-// Github:   
+// Github:   https://github.com/rhenenrpg/rhenenrpg.github.io/blob/main/mgmp/roll20/CommunityPlaySupport.js
 // By:       Martijn Sanders
 // Contact:  https://app.roll20.net/users/2575981/martijn-s
 // Forum:    na
