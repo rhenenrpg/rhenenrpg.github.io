@@ -23,7 +23,7 @@ The compendiums in the Character Hub are curated to only have content available 
 
 ### Characterhub - Roll20 Mod
 
-The [roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.github.io/blob/main/mgmp/roll20/CommunityPlaySupport.js) provides the following functionalities.
+The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.github.io/blob/main/mgmp/roll20/CommunityPlaySupport.js) provides the following functionalities:
 
 #### Characterhub Community Play Support - New Character Button
 
