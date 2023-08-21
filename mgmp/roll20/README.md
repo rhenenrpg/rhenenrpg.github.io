@@ -44,14 +44,16 @@ After clicking the button, the player can open the new character and use the cha
 
 If the setting playerCharacterLimit is set to 0, the mod never shows buttons.
 
+**Note:** Roll20 recently introduce a +Character button that can be used by all players. 
+
 ![](new-character-button.png)
 
 #### Enforce character naming convention
 
 GMs see all characters in the hub and there can be many, hence a naming convention of **charactername (player displayname)** is enforced. 
-Enforcement takes place whenever a charactername changes, a player display name changes or when a player (re)launches the campaign.
+Enforcement takes place whenever a charactername changes, a player display name changes and when a player (re)launches the campaign.
 
-3. Create or Update defaulttoken
+#### Create or Update defaulttoken
 
 Until recently roll20 did not allow players to change the tokens of their character, but players were and still are allowed to set the avatar of their characters. 
 If the setting avatarIsDefaultToken is on, the defaulttoken of character is automatically set when the avatar changes and/or when the charactername changes.
