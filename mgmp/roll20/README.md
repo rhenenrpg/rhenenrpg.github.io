@@ -5,12 +5,12 @@ This section describes a solution to organize Community Play in Roll20. Communit
 This solution is intended for Community Plays with one roll20 campaign acting as Character Hub. When the initative and the amount of character grows, there can be a Character Hub for each Tier of Play. The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub. The Gamemasters use the GM Notes to note when characters have participated in a session and how many XP/loot was gained. A group few Gamemasters with good knowledge of the game system check 
  
 Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single play campaign, other GMs like to make a seperate play campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. 
-![](roll20-opening-page.png)
+![Characters are moved between games using the character vault](movingcharacters.png)
 
 After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
 
-Next image shows how the games from a Community Play can look like in Roll20.
-![](roll20-opening-page.png)
+
+![This is how games from a Community Play can look like in Roll20.](roll20-opening-page.png)
 
 
 ## Characterhub
