@@ -4,12 +4,12 @@ This section describes a solution to organize Community Play in Roll20. Communit
 
 This solution is intended for Community Plays with one roll20 campaign acting as Character Hub. When the initative and the amount of character grows, there can be a Character Hub for each Tier of Play. The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. All players create and store their character in the Character Hub. The Gamemasters use the GM Notes to note when characters have participated in a session and how many XP/loot was gained. A group few Gamemasters with good knowledge of the game system check 
  
-Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single play campaign, other GMs like to make a seperate play campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. 
+Each GM uses it's own Play campaign(s) during sessios. Some GMs prefer a single play campaign, other GMs like to make a seperate play campaign for each different adventure; both are fine. Before a session the GM copies the participating characters to their play campaign using the character vault. After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
+
 
 Characters are moved between games using the character vault:
 ![](movingcharacters.png)
 
-After a session the GM register the fact that the characters played in the gmnotes of the original characters in the characterhub. The copy of the character in the play campaign is not used anymore and can be removed from the GM game.
 
 This is how games from a Community Play can look like in Roll20:
 ![](roll20-opening-page.png)
@@ -24,8 +24,8 @@ Characters are created and maintained in the characterhub. The Character Hub is 
   
 #### Curation of Compendium Content
 
-The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. This means that the creator needs to explicitly share all compendiums that AND explicity block all other compendiums. 
-All players create and store their character in the Character Hub.
+The compendiums in the Character Hub are curated to only have content available that is agreed by the gamemasters. This means that the creator needs to explicitly share all compendiums that AND explicity block all other compendiums. All players create and store their character in the Character Hub. 
+Note that the owner of the Characterhub needs to turn on Compendium Sharing when creating the game and then *never* turn it off again.
 
 #### Characterhub - Roll20 Mod
 
@@ -33,13 +33,15 @@ The [Roll20 Community Play Support mod](https://github.com/rhenenrpg/rhenenrpg.g
 
 1. New/Open Character Button
 
-Every time a player launches the characterhub campaign, a pink button is shown in the chat. When the player presses this button:
+(If the setting playerCharacterLimit is larger than 0)
+Every time a player launches the characterhub campaign, a button is shown in the chat. 
+When the player presses this button:
   * a new character is created;
   * the character is assigned to the player;
   * the roll20 accountid of the player is stored in attribute **ffwplayerid** so characters can be automaticallty assigned in GM games (see below).
 After clicking the button, the player can open the new character and use the charactermancer to stat it out.
 
-If the setting  playerCharacterLimit is set to 0, the mod never shows buttons.
+If the setting playerCharacterLimit is set to 0, the mod never shows buttons.
 
 ![](new-character-button.png)
 
