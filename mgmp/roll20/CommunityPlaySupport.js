@@ -300,7 +300,7 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
         if (attrs.length > 0) { // only for characters that have ${accountAttributeName} attribute            
             const players = findObjs({ type: 'player', d20userid: attrs[0].get('current') });
             if (players.length > 0) {
-                mylog(`Character ${character.get("name")} Check ownership, inplayerjournals: ${c.get("inplayerjournals")}, controlledby: ${c.get('controlledby')}, ${accountAttributeName}: ${attrs[0].get('current')}`);
+                mylog(`Character ${character.get("name")} Check ownership, inplayerjournals: ${character.get("inplayerjournals")}, controlledby: ${character.get('controlledby')}, ${accountAttributeName}: ${attrs[0].get('current')}`);
                 couinCharacterOfPlayer(character, players[0]);
             } else {
                 mylog(`Character ${character.get("name")} ${accountAttributeName} references a player that has not joined this game`);
