@@ -260,8 +260,8 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
         });
         let std_name = standardizedCharacterName(c.get('name'), player.get('_displayname'));
         if (std_name !== c.get('name')) {
-            mylog(`character ${c.get("_id")} update name ${c.get('name')} to ${rightname}`);
-            c.set('name', rightname);
+            mylog(`character ${c.get("_id")} update name ${c.get('name')} to ${std_name}`);
+            c.set('name', std_name);
         }
         couinDefaultToken(c);
 
