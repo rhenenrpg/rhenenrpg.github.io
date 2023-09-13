@@ -51,7 +51,7 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
                         gmlist: [],
                         config: {
                             avatarIsDefaultToken: true,  // if true the default token will always be based on the avatar image
-                            playerCharacterLimit: 0, // maximum amount of characters that a player is allowed to create in this game.
+                            playerCharacterLimit: 1, // maximum amount of characters that a player is allowed to create in this game.
                             newCharacterName: "Nieuw", // Name for a new character, playername will be appended between round brackets
                             createdCharacterCheckDelay: 5000 // milliseconds to wait before checking new characters     
                         }
@@ -144,6 +144,7 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
         } else {
             existingtokenobj = JSON.parse(existingtoken);
             mylog(`existingtokenobj ${existingtoken}}`);
+            mylog(`dt ${JSON.stringify(dt)}}`);
             for (const [key, value] of Object.entries(dt)) {
                 if (existingtokenobj[key] === undefined) {
                     if (value != '') {
@@ -151,10 +152,11 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
                         same = false;
                     }
                 } else if (key === 'imgsrc') {
-                    if (value && not existingtokenobj[key]) {
+                    mylog(`DEBUG VALUES TO COMPARE ${key} ${value} vs ${existingtokenobj[key]}`);                    
+                    if ((value && !existingtokenobj[key]) || (value && !existingtokenobj[key])) {
                         mylog(`DEBUG DIFFERENT ${key} ${value} vs ${existingtokenobj[key]}`);
-                        same = false;                    
-                   } else if (value.split('?')[0] !== existingtokenobj[key].split('?')[0]) {
+                        same = false;
+                    } else if (value.split('?')[0] !== existingtokenobj[key].split('?')[0]) {
                         mylog(`DEBUG DIFFERENT ${key} ${value} vs ${existingtokenobj[key]}`);
                         same = false;
                     }
@@ -204,6 +206,10 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
         }
         if (c.get("avatar").includes('marketplace')) {
             mylog(`character ${c.get("_id")} cannot use a marketplace image as token}`);
+            return;
+        }
+        if (!getCleanImgsrc(c.get("avatar"))) {
+            mylog(`character ${c.get("_id")} cannot use image ${c.get("avatar")} as token}`);
             return;
         }
         c.get("_defaulttoken", (t) => {
