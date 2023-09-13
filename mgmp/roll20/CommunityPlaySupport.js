@@ -151,7 +151,10 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
                         same = false;
                     }
                 } else if (key === 'imgsrc') {
-                    if (value.split('?')[0] !== existingtokenobj[key].split('?')[0]) {
+                    if (value && not existingtokenobj[key]) {
+                        mylog(`DEBUG DIFFERENT ${key} ${value} vs ${existingtokenobj[key]}`);
+                        same = false;                    
+                   } else if (value.split('?')[0] !== existingtokenobj[key].split('?')[0]) {
                         mylog(`DEBUG DIFFERENT ${key} ${value} vs ${existingtokenobj[key]}`);
                         same = false;
                     }
