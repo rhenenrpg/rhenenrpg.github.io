@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Puzzle Generator</title>
+    <style>
+        #puzzle-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 300px;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Graphic Puzzle Generator</h1>
+
+    <label for="imageInput">Choose a black/white image:</label>
+    <input type="file" id="imageInput" accept="image/*">
+    </br>
+    <label for="fgColorPicker">Choose a foreground color:</label>
+    <input type="color" id="fgColorPicker" value="#000000">
+    <label for="bgColorPicker">background color:</label>
+    <input type="color" id="bgColorPicker" value="#FFFFFF">
+    </br>
+    <button onclick="generatePuzzle()">Generate Puzzle</button>
+    </br>
+    <label for="hPieces">Choose number of horizonal pieces:</label>
+    <input type="number" id="hPieces" value="1" min="1">
+    <label for="vPieces">vertical pieces:</label>
+    <input type="number" id="vPieces" value="1" min="1">
+    </br>
+    <button onclick="savePuzzle()">Save Puzzle</button>
+    <div id="puzzle-container">
+        <div>
+            <p>input</p>
+            <img id="uploadedImage" alt="Uploaded Image">
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>background</p>
+            <img id="backgroundImage" alt="Background Image">
+        </div>
+        <div>
+            <p>foreground</p>
+            <img id="foregroundImage" alt="Foreground Image">
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>result preview</p>
+            <div class="image-container">
+                <img id="resultBackgroundImage" alt="Background Image">
+                <img id="resultForegroundImage" class="overlay-image" alt="Foreground Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hexToRGBA(hex) {
+            // Remove the leading # if present
+            hex = hex.replace(/^#/, '');
+
+            // Parse the hex value to RGB components
+            var bigint = parseInt(hex, 16);
+            var r = (bigint >> 16) & 255;
+            var g = (bigint >> 8) & 255;
+            var b = bigint & 255;
+            return [r, g, b, 255];
+        }
+        function save(data, filename) {
+            const link = document.createElement('a');
+            link.href = data;
+            link.download = filename;
+            link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+        }
+        let puzzelWidth = 0;
+        let puzzelHeight = 0
+        function generatePuzzle() {
+            const imageInput = document.getElementById('imageInput');
+            const puzzleContainer = fgColorPicker
+            const color1 = hexToRGBA(bgColorPicker.value); // [0, 0, 0, 255];
+            const color2 = hexToRGBA(fgColorPicker.value); // [255, 255, 255, 255];
+
+            if (imageInput.files.length > 0) {
+                const originalImage = new Image();
+                originalImage.src = URL.createObjectURL(imageInput.files[0]);
+                originalImage.onload = function () {
+                    puzzelWidth = originalImage.width;
+                    puzzelHeight = originalImage.height;
+
+                    const oCanvas = document.createElement('canvas');
+                    oCanvas.width = originalImage.width;
+                    oCanvas.height = originalImage.height;
+                    const oCtx = oCanvas.getContext('2d');
+
+                    const bgCanvas = document.createElement('canvas');
+                    bgCanvas.width = originalImage.width;
+                    bgCanvas.height = originalImage.height;
+                    const bgCtx = bgCanvas.getContext('2d');
+
+                    const fgCanvas = document.createElement('canvas');
+                    fgCanvas.width = originalImage.width;
+                    fgCanvas.height = originalImage.height;
+                    const fgCtx = fgCanvas.getContext('2d');
+
+                    // Draw original image
+                    oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
+                    oCtx.drawImage(originalImage, 0, 0, oCanvas.width, oCanvas.height);
+                    const oImageData = oCtx.getImageData(0, 0, oCanvas.width, oCanvas.height);
+                    const oData = oImageData.data;
+
+                    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+                    const bgImageData = bgCtx.getImageData(0, 0, bgCanvas.width, bgCanvas.height);
+                    const bgData = bgImageData.data;
+
+                    fgCtx.clearRect(0, 0, fgCanvas.width, fgCanvas.height);
+                    const fgImageData = fgCtx.getImageData(0, 0, fgCanvas.width, fgCanvas.height);
+                    const fgData = fgImageData.data;
+
+                    for (let i = 0; i < oData.length; i += 4) {
+                        const color = (((Math.random() * 1241758182) >> 9) & 1);
+                        if (color) {
+                            bgData[i] = color1[0]; // Red
+                            bgData[i + 1] = color1[1]; // Green
+                            bgData[i + 2] = color1[2]; // Blue
+                            bgData[i + 3] = color1[3]; // alpha
+                        } else {
+                            bgData[i] = color2[0]; // Red
+                            bgData[i + 1] = color2[1]; // Green
+                            bgData[i + 2] = color2[2]; // Blue
+                            bgData[i + 3] = color2[3]; // alpha
+                        }
+                        if (oData[i] < 100 && oData[i + 3] < 10) {  // black is mask (only check red color and alha for mask)
+                            // reverse colors, make color2 transparant
+                            if (color) {
+                                fgData[i] = 0; // Red
+                                fgData[i + 1] = 0; // Green
+                                fgData[i + 2] = 0; // Blue
+                                fgData[i + 3] = 0; // alpha
+                            } else {
+                                fgData[i] = color1[0]; // Red
+                                fgData[i + 1] = color1[1]; // Green
+                                fgData[i + 2] = color1[2]; // Blue
+                                fgData[i + 3] = color1[3]; // alpha
+                            }
+                        } else {
+                            // same as background with color2 transparant
+                            if (color) {
+                                fgData[i] = color1[0]; // Red
+                                fgData[i + 1] = color1[1]; // Green
+                                fgData[i + 2] = color1[2]; // Blue
+                                fgData[i + 3] = color1[3]; // alpha
+                            } else {
+                                fgData[i] = 0; // Red
+                                fgData[i + 1] = 0; // Green
+                                fgData[i + 2] = 0; // Blue
+                                fgData[i + 3] = 0; // alpha
+                            }
+                        }
+                    }
+
+                    bgCtx.putImageData(bgImageData, 0, 0);
+                    fgCtx.putImageData(fgImageData, 0, 0);
+
+                    document.getElementById('uploadedImage').src = oCanvas.toDataURL("image/png")
+                    document.getElementById('backgroundImage').src = bgCanvas.toDataURL("image/png")
+                    document.getElementById('foregroundImage').src = fgCanvas.toDataURL("image/png")
+                    document.getElementById('resultBackgroundImage').src = bgCanvas.toDataURL("image/png")
+                    document.getElementById('resultForegroundImage').src = fgCanvas.toDataURL("image/png")
+
+                };
+            } else {
+                alert('Please choose an image first.');
+            }
+        }
+        function savePuzzle() {
+            const todayDate = new Date().toISOString().slice(0, 19);
+            save(document.getElementById('backgroundImage').src, `puzzle-${todayDate}-background.png`);
+            save(document.getElementById('foregroundImage').src, `puzzle-${todayDate}-foreground.png`);
+            const hPieces = parseInt(document.getElementById('hPieces').value)
+            const vPieces = parseInt(document.getElementById('vPieces').value)
+            for (let row = 0; row < vPieces; row++) {
+                for (let col = 0; col < hPieces; col++) {
+                    image = document.getElementById('foregroundImage')
+                    const cellCanvas = document.createElement('canvas');
+                    cellCanvas.width = puzzelWidth / hPieces;
+                    cellCanvas.height = puzzelHeight / vPieces;
+                    const cellCtx = cellCanvas.getContext('2d');
+                    const x = col * cellCanvas.width;
+                    const y = col * cellCanvas.height;
+                    cellCtx.drawImage(document.getElementById('foregroundImage'), x, y, cellCanvas.width, cellCanvas.height, 0, 0, cellCanvas.width, cellCanvas.height);
+                    save(cellCanvas.toDataURL("image/png"), `puzzle-${todayDate}-foreground-${col + 1}-${row + 1}.png`);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
