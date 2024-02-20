@@ -32,7 +32,7 @@ const CommunityPlaySupport = (() => { // eslint-disable-line no-unused-vars
     let changed_characters = {};
 
     const checkInstall = () => {
-        log(`-=> ${scriptName} v${version} <=- [${lastUpdate}] --offset ${API_Meta.Survey.offset}`);
+        log(`-=> ${scriptName} v${version} <=- [${lastUpdate}] --offset ${API_Meta.CommunityPlaySupport.offset}`);
         if (!_.has(state, scriptName) || S().version !== schemaVersion) {
             mylog('  > Updating Schema to v' + schemaVersion + ' <');
             switch (S() && S().version) {
