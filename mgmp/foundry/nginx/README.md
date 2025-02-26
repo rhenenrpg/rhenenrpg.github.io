@@ -3,7 +3,7 @@
 Given the fact that the cloudflare tunnel is used to connect the reverseproxy to internet and cloudflare handles https, 
 the server can simply stay defined as default. 
 
-Also the geo location of the request is added to the logformat ($http_cf_ipcountry).
+The geo location of the request is added to the logformat ($http_cf_ipcountry) and also the duration it took to serve the request ($request_time).
 
 
 ```
