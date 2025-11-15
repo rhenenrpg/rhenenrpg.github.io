@@ -44,13 +44,27 @@ It's a restricted site, so disallow robots
         }
 ```
 
-Block visitors from countries with many daily requests that will never have any of our users. Probably bots that ignore /robots.txt
+Forbid traffic from countries with many daily requests but that will never have any of our users. Probably bots that ignore /robots.txt
 ```        
-        if ( $http_cf_ipcountry = "SG" ) { return 403; }
-        if ( $http_cf_ipcountry = "RU" ) { return 403; }
+        if ( $http_cf_ipcountry = "SG" ) { return 403 ""; }
+        if ( $http_cf_ipcountry = "RU" ) { return 403 ""; }
         if ( $http_cf_ipcountry = "UA" ) { return 403 ""; }
         if ( $http_cf_ipcountry = "CN" ) { return 403 ""; }
 ```
+
+Forbid well known probe requests from scripts.
+```
+        location ~ ^/wordpress.*$ { return 403 ""; }
+        location ~ ^/wp.*$ { return 403 ""; }
+        location ~ ^/vendor.*$ { return 403 ""; }
+        location ~ ^/[^/]*\.php$ { return 403 ""; }
+        location ~ ^/cgi-bin/.*$ { return 403 ""; }
+        location ~ ^/index/.*$ { return 403 ""; }
+        location ~ ^/images/.*$ { return 403 ""; }
+        location ~ ^/uploads/.*$ { return 403 ""; }
+        location ~ ^/.well-known/.*$ { return 403 ""; }
+```
+
 
 The dokuwiki instance is used for authentication and authorization of the complete site using nginx 
 [subrequest authentication](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-subrequest-authentication/).
