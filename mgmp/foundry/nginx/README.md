@@ -44,10 +44,12 @@ It's a restricted site, so disallow robots
         }
 ```
 
-Block SG and RU visitors, there are 100+ daily requests fromthose countries. Probably because bots ignore /robots.txt
+Block visitors from countries with many daily requests that will never have any of our users. Probably bots that ignore /robots.txt
 ```        
         if ( $http_cf_ipcountry = "SG" ) { return 403; }
         if ( $http_cf_ipcountry = "RU" ) { return 403; }
+        if ( $http_cf_ipcountry = "UA" ) { return 403 ""; }
+        if ( $http_cf_ipcountry = "CN" ) { return 403 ""; }
 ```
 
 The dokuwiki instance is used for authentication and authorization of the complete site using nginx 
